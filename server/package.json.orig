@@ -5,10 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node --require dotenv/config server.js",
-    "dev": "nodemon --require dotenv/config server.js",
-    "reset": "cd config && node --require dotenv/config reset.js",
-    "seed": "npm run reset"
+    "start": "npm run reset && nodemon --require dotenv/config server.js",
+    "reset": "cd config && node --require dotenv/config reset.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -176,29 +176,10 @@ const seedTripsTable = async () => {
     })
 }
 
-// seedTripsTable()
-// createActivitiesTable()
-// createDestinationsTable()
-// createTripsDestinationsTable()
-// createUsersTable()
-// createTripsUsersTable()
-// createUsersTripsTable()
-
-const runReset = async () => {
-    // 1. Create independent tables first
-    await createDestinationsTable()
-    await createUsersTable()
-    
-    // 2. Seed the Trips table (this also creates the Trips table)
-    // We must wait for this to finish so IDs exist for the foreign keys
-    await seedTripsTable()
-
-    // 3. Create dependent tables last (these have Foreign Keys pointing to trips/users)
-    await createActivitiesTable()
-    await createTripsDestinationsTable()
-    await createTripsUsersTable()
-
-    console.log('🚀 All tables processed in the correct order!')
-}
-
-runReset();
+seedTripsTable()
+createActivitiesTable()
+createDestinationsTable()
+createTripsDestinationsTable()
+createUsersTable()
+createTripsUsersTable()
+createUsersTripsTable()
