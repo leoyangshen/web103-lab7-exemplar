@@ -1,8 +1,8 @@
-import { pool } from './database.js'
-import './dotenv.js'
-import { fileURLToPath } from 'url'
-import path, { dirname } from 'path'
-import fs from 'fs'
+import { pool } from './database.js';
+import './dotenv4reset.js';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+import fs from 'fs';
 
 const currentPath = fileURLToPath(import.meta.url)
 const tripsFile = fs.readFileSync(path.join(dirname(currentPath), '../config/data/data.json'))
@@ -196,7 +196,7 @@ const runReset = async () => {
     // 3. Create dependent tables last (these have Foreign Keys pointing to trips/users)
     await createActivitiesTable()
     await createTripsDestinationsTable()
-    await createTripsUsersTable()
+    await createUsersTripsTable();
 
     console.log('🚀 All tables processed in the correct order!')
 }

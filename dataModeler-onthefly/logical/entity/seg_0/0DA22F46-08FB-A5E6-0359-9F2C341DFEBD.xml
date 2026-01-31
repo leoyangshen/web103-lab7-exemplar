@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0DA22F46-08FB-A5E6-0359-9F2C341DFEBD" name="users trips">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>8CE30F19-EFC1-4B10-72F6-595F2BE5A87F</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="13C91056-10BC-D39C-FAF2-52E8A202ED9E">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>031F6CAE-8E35-5A1E-9390-8E06C70980FF</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="trip id" id="FEFEB126-25DF-EB58-5C15-5341987D4DD5">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>CECC3D5C-B2FF-2AA5-C455-5FF4F4E523A1</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<referedAttribute>141AC488-020B-DC33-C226-31F2FF70C4A2</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="1B227C03-FA78-35C0-B085-C9EE4E632965">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>5DD5AFFF-D9AA-7849-B3A5-E7DDCAD20444</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E97D49ED-6CF1-50DF-D07E-3ED24518331B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4145CD06-C3C1-E5CA-DD3B-A2CC86B832D3" name="users trips PK">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>90895BAB-E05D-CD24-E7DB-45B2ECAC1E1E</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>13C91056-10BC-D39C-FAF2-52E8A202ED9E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

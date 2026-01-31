@@ -1,0 +1,3 @@
+"comment": "start uses its own dotenv invocation while dev uses a dotenv.js file in the program at the beginning; ondemand waits for the program to run and initialise itself when the pool is setup for database access, and only the start method can have an empty dotenv.js file since it knows where the .env file is.",
+
+So start and dev preload the environment either by node's own invocation of dotenv or the backend program's own internal code's invocation (dotenv.js), while ondemand doesn't not preload but waits until the program is run and the pool object is used when filling up the environmental variables.

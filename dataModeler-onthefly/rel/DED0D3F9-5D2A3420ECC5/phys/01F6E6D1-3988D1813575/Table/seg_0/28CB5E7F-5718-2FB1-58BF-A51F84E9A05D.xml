@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="destinations" directorySegmentName="seg_0" id="28CB5E7F-5718-2FB1-58BF-A51F84E9A05D">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="flag_img_url" id="1E0D0536-93C8-3DA8-5440-46F7DA022261">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id" id="50BABE91-BDC0-DF6E-E9EF-F9CA7E16DDF4">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="country" id="7B3F8EF4-239A-A6B5-55B6-24FEBE76E93D">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="description" id="9CCC51C4-FDEF-B236-8788-6BBE8041557B">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="destination" id="AEB99C46-CEA9-4C76-1E62-A46B5F945C24">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="city" id="B44C1B13-3D9E-30DC-1C48-09F0C5E3A44E">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="img_url" id="F85EC830-23F8-8C40-D96D-EF1DE8BC5E2D">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="destinations_PK" id="16DA6A11-6EA4-3B97-2624-582E442A04E4">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -6,9 +6,8 @@ import { dirname, resolve } from 'path'
 // In package.json, run dev runs in the top directory while run comment runs at the top directory as well but goes into the config directory, so the "parent" directory is different for each case, and using the absolute path is necessary.
 
 // This will tell you exactly where it is looking, and it will show two different paths depending on if run dev or comment is used.
-console.log("Searching for .env at:", path.resolve('./.env'));
-dotenv.config({ path: './.env' });
-// CodePath's example was wrong using ../.env for all cases, but dotenv/config in package.json saved its butt by pre-loading from the beginning (nodemon) all the enviromental variables at once so later on misses (where .env is located) will be ignored. Reset.js is placed under /server/config so a different dotenv4reset is needed so it will look one directory up to ../.env, all because cd (./config) was used (inside package.json) before invoking reset and causing the starting point to chage from the usual root (/server) directory.
+console.log("From dotenv4reset: Searching for .env at:", path.resolve('../.env'));
+dotenv.config({ path: '../.env' });
 
 // This says: "Go to the config folder, then up one, then find .env"
 // const __dirname = dirname(fileURLToPath(import.meta.url))

@@ -1,0 +1,131 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="48BE2ECC-372A-4EE9-27D4-C8723A3AB1D2" name="destinations">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>28CB5E7F-5718-2FB1-58BF-A51F84E9A05D</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="42E23673-400A-9E29-A63C-2E764A38CA9B">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>50BABE91-BDC0-DF6E-E9EF-F9CA7E16DDF4</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="destination" id="2F5BA5E4-A961-0057-7008-BED0660B9950">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>AEB99C46-CEA9-4C76-1E62-A46B5F945C24</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>95F6DF07-8ED3-2A04-A5F7-90786BB2AC3A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="319BDA2E-1396-FD05-8BCB-C61728DE7A5C">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>9CCC51C4-FDEF-B236-8788-6BBE8041557B</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7CAE3F8D-796D-3653-1841-91A5B5E03C27</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="city" id="88A731C0-0BEF-A112-5210-6237541B7613">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>B44C1B13-3D9E-30DC-1C48-09F0C5E3A44E</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E97D49ED-6CF1-50DF-D07E-3ED24518331B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="country" id="4A05A4DB-9E28-203C-881A-8567F9CBA7AE">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>7B3F8EF4-239A-A6B5-55B6-24FEBE76E93D</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>E97D49ED-6CF1-50DF-D07E-3ED24518331B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="img url" id="FD901605-B553-6F4C-3F93-5388166882FA">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>F85EC830-23F8-8C40-D96D-EF1DE8BC5E2D</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>575B64DD-A1CE-CB82-7D54-ABE54E07DCB1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="flag img url" id="92F5E114-4C70-B08B-BC5C-3BB5DA6F39AF">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>1E0D0536-93C8-3DA8-5440-46F7DA022261</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>575B64DD-A1CE-CB82-7D54-ABE54E07DCB1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="33717C19-CF48-C15C-B9BD-0F427AEC065B" name="destinations PK">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>16DA6A11-6EA4-3B97-2624-582E442A04E4</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>42E23673-400A-9E29-A63C-2E764A38CA9B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="47D51CEE-E6F3-A99B-B98E-873BEB5A1664" containerWithKeyObject="EAC5C109-AB20-596A-D6C5-27D0BF64264E" localFKIndex="342DE681-73B7-BA07-BDD7-89271F476F05" name="fk_td_dest">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>F204C222-F47D-6BAD-C87F-7B0E28A4E832</importedID>
+<referredTableLongName>destinations</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>28CB5E7F-5718-2FB1-58BF-A51F84E9A05D</referredTableID>
+<keyObject>16DA6A11-6EA4-3B97-2624-582E442A04E4</keyObject>
+<referredKeyID>16DA6A11-6EA4-3B97-2624-582E442A04E4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

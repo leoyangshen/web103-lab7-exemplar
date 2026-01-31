@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="trips" directorySegmentName="seg_0" id="2E1B00C0-62B9-1646-1B45-E2230A15887F">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="title" id="0C3E6E78-A495-43C4-1772-267D5CFE7DA4">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="end_date" id="2041160A-21BF-7937-129C-F43B5F32841A">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="num_days" id="359EAF6A-6853-B52C-E568-B848E79A2F3B">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="description" id="4CE7E138-11B6-9025-57A9-2234A40FE1A9">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="total_cost" id="8E4C8CE8-25C2-4FB4-5AFB-4E408DE19984">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id" id="CFBD91D3-B4D2-7202-2180-0A001AB05DF1">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="start_date" id="F60CE222-C652-554F-2704-1D0E80776042">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="img_url" id="F78F7395-0150-84CC-0C6E-183BF5FC2AAF">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="trips_PK" id="6EC89EFD-5E9C-51AC-2FAB-33286329DEFE">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v20c.StorageDesignOraclev20c>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.StructuredTypeProxyOraclev10g" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.StructuredTypeProxyOraclev10g" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="Table" objectID="28CB5E7F-5718-2FB1-58BF-A51F84E9A05D" name="destinations" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="Table" objectID="2E1B00C0-62B9-1646-1B45-E2230A15887F" name="trips" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="Table" objectID="4C6E085C-FD06-ABD4-32FA-9F8B6CE40F15" name="activities" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="Table" objectID="8CE30F19-EFC1-4B10-72F6-595F2BE5A87F" name="users_trips" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" propertyParentId="01F6E6D1-3988D1813575"/>
+   <object objectType="Table" objectID="EAC5C109-AB20-596A-D6C5-27D0BF64264E" name="trips_destinations" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" propertyParentId="01F6E6D1-3988D1813575"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v20c.StorageDesignOraclev20c>

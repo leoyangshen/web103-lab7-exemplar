@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="fk_td_dest" directorySegmentName="seg_0" id="EE884934-466B-FA40-8194-7AC13F527E18">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:10:38 UTC</createdTime>
+<generatorID>47D51CEE-E6F3-A99B-B98E-873BEB5A1664</generatorID>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<engineerTo>
+<item key="DED0D3F9-9C2D-C6F2-F56C-5D2A3420ECC5" value="true"/>
+</engineerTo>
+<sourcePk>33717C19-CF48-C15C-B9BD-0F427AEC065B</sourcePk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>48BE2ECC-372A-4EE9-27D4-C8723A3AB1D2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>75FB2A31-9A02-1CF5-8345-3204EDDE56FF</targetEntity>
+<transferable>true</transferable>
+<deleteRule>CASCADE</deleteRule>
+</Relation>

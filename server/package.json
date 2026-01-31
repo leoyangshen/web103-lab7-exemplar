@@ -1,13 +1,17 @@
 {
-  "name": "server",
+  "name": "test-check",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node --require dotenv/config server.js",
-    "dev": "nodemon --require dotenv/config server.js",
-    "reset": "cd config && node --require dotenv/config reset.js",
+    "dev": "nodemon --require ./config/dotenv.js server.js",
+    "ondemand": "nodemon server.js",
+    "comment": "start uses its own dotenv invocation while dev uses a dotenv.js file in the program at the beginning; ondemand waits for the program to run and initialise itself when the pool is setup for database access, and only the start method can have an empty dotenv.js file since it knows where the .env file is.",
+    "reset": "cd config && node reset.js",
+    "comment1": "since cd was used the cwd is in ./config and dotenv4reset.js is necessary to look for .env in the parent directory, but reset2 could use the regular dotenv.js",
+    "reset2": "node ./config/reset.js",
     "seed": "npm run reset"
   },
   "dependencies": {

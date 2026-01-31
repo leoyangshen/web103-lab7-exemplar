@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2E1B00C0-62B9-1646-1B45-E2230A15887F" name="trips">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>F83CEB94-FC47-C1B7-6D1F-F01EDC0C9B89</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CFBD91D3-B4D2-7202-2180-0A001AB05DF1">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>4D536853-66DD-B6E7-97EC-4043645CF9AD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="title" id="0C3E6E78-A495-43C4-1772-267D5CFE7DA4">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>9AD0E184-26BA-389E-9892-28A3B0922F0E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>95F6DF07-8ED3-2A04-A5F7-90786BB2AC3A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="4CE7E138-11B6-9025-57A9-2234A40FE1A9">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>A39CB3CE-84EB-2FAB-CF32-035F1FD9BAFE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7CAE3F8D-796D-3653-1841-91A5B5E03C27</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="img_url" id="F78F7395-0150-84CC-0C6E-183BF5FC2AAF">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>62FF4B7D-6933-8CAA-7AFC-E62D282E6990</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>575B64DD-A1CE-CB82-7D54-ABE54E07DCB1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="num_days" id="359EAF6A-6853-B52C-E568-B848E79A2F3B">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>30E18399-D350-B152-EBC5-0067EC131083</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="start_date" id="F60CE222-C652-554F-2704-1D0E80776042">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>ED3068E0-2F84-5ADF-0F29-2AF7DA0026CA</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>66CB3FCC-1625-8C69-3E68-BB4439DA19F0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="end_date" id="2041160A-21BF-7937-129C-F43B5F32841A">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>5B35EA6F-837C-0DEF-DF46-4D2AFEDD2672</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>66CB3FCC-1625-8C69-3E68-BB4439DA19F0</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_cost" id="8E4C8CE8-25C2-4FB4-5AFB-4E408DE19984">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>83078A87-3CF0-400C-0D5F-8B6B7397A9B6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>66F2C47E-696A-4107-7829-CFCDEDF3913B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6EC89EFD-5E9C-51AC-2FAB-33286329DEFE" name="trips_PK">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>896199DE-FFFB-E0F0-6562-F4E295230AEF</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFBD91D3-B4D2-7202-2180-0A001AB05DF1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

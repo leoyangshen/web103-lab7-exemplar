@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="867FD83D-E964-9DC8-9D7F-54AEA2B7BE5B" containerWithKeyObject="EAC5C109-AB20-596A-D6C5-27D0BF64264E" localFKIndex="29C73E6D-B00A-13CE-F884-5CEAA53E1A2A" name="fk_td_trip">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>3BB7CC88-118E-E408-E51E-141C9E7F7372</importedID>
+<referredTableLongName>trips</referredTableLongName>
+<deleteRule>CASCADE</deleteRule>
+<referredTableID>2E1B00C0-62B9-1646-1B45-E2230A15887F</referredTableID>
+<keyObject>6EC89EFD-5E9C-51AC-2FAB-33286329DEFE</keyObject>
+<referredKeyID>6EC89EFD-5E9C-51AC-2FAB-33286329DEFE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

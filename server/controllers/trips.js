@@ -3,6 +3,8 @@ import { pool } from '../config/database.js'
 const createTrip = async (req, res) => {
     try {
         const { title, description, img_url, num_days, start_date, end_date, total_cost } = req.body
+	// 1. Define the username from the authenticated session
+        const username = req.user ? req.user.username : 'guest'
 
         const results = await pool.query(`
             INSERT INTO trips (title, description, img_url, num_days, start_date, end_date, total_cost)
@@ -23,7 +25,7 @@ const createTrip = async (req, res) => {
      }
 
     catch (error) {
-        response.status(409).json( { error: error.message } )
+        res.status(409).json( { error: error.message } )
         console.log('Error:', error.message)
     }
 }

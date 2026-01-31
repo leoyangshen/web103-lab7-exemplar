@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EAC5C109-AB20-596A-D6C5-27D0BF64264E" name="trips_destinations">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>367FFC3E-5D50-B1E8-5B9C-56A1899646AF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="trip_id" id="9273850B-C201-EA58-446D-9E36DE5A079B">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>F6F2F4A0-DEFC-6FF8-75BF-33BE4DFED2A8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="867FD83D-E964-9DC8-9D7F-54AEA2B7BE5B" referredColumn="CFBD91D3-B4D2-7202-2180-0A001AB05DF1"/>
+</associations>
+</Column>
+<Column name="destination_id" id="A6AB73FA-C7BE-0026-B9C9-C7E9445EFAF0">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>C1A93EA4-E8FF-0A64-86B6-E5263989939F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>36C78889-87C8-2B80-698B-DCCB5E75BA2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47D51CEE-E6F3-A99B-B98E-873BEB5A1664" referredColumn="50BABE91-BDC0-DF6E-E9EF-F9CA7E16DDF4"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CE5CE949-22ED-EAB1-93D8-BC907107745D" name="trips_destinations_PK">
+<sourceDDLFile>OnTheFly.sql</sourceDDLFile>
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<importedID>A091C3DF-6949-9217-1555-65EBBFE6B5C3</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9273850B-C201-EA58-446D-9E36DE5A079B"/>
+<colUsage columnID="A6AB73FA-C7BE-0026-B9C9-C7E9445EFAF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="342DE681-73B7-BA07-BDD7-89271F476F05" name="fk_td_dest">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6AB73FA-C7BE-0026-B9C9-C7E9445EFAF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="29C73E6D-B00A-13CE-F884-5CEAA53E1A2A" name="fk_td_trip">
+<createdBy>leo</createdBy>
+<createdTime>2026-01-29 03:03:35 UTC</createdTime>
+<ownerDesignName>dataModeler-onthefly</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9273850B-C201-EA58-446D-9E36DE5A079B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
