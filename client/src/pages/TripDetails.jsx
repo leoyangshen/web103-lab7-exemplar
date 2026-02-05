@@ -1,140 +1,107 @@
-import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import ActivityBtn from '../components/ActivityBtn'
-import DestinationBtn from '../components/DestinationBtn'
-import '../css/TripDetails.css'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import ActivityBtn from '../components/ActivityBtn';
+import '../css/TripDetails.css';
 
-const TripDetails = ( { data, api_url } ) => {
-
-    const { id } = useParams()
-    const [activities, setActivites] = useState([])
-    const [destinations, setDestinations] = useState([])
-    const [travelers, setTravelers] = useState([])
+const TripDetails = ({ data, api_url }) => {
+    const { id } = useParams();
     const [trip, setTrip] = useState({
-        id: 0,
-        title: '',
-        description: '',
-        img_url: '',
-        num_days: 0,
-        start_date: '',
-        end_date: '',
-        total_cost: 0.0
-    })
+        id: 0, title: '', description: '', img_url: '', 
+        num_days: 0, start_date: '', end_date: '', total_cost: 0.00
+    });
+    
+    const [activities, setActivities] = useState([]);
+    const [destinations, setDestinations] = useState([]);
 
     useEffect(() => {
-        const result = data.filter(item => item.id === parseInt(id))[0]
-
+        // 1. Find the specific trip from the trips state passed from App.jsx
+        const result = data.find(item => item.id === parseInt(id));
         if (result) {
-            setTrip({
-                id: parseInt(result.id),
-                title: result.title,
-                description: result.description,
-                img_url: result.img_url,
-                num_days: parseInt(result.num_days),
-                start_date: result.start_date.slice(0, 10),
-                end_date: result.end_date.slice(0, 10),
-                total_cost: result.total_cost
-            })
+            setTrip(result);
         }
 
+        // 2. Fetch Activities for this specific trip id
         const fetchActivities = async () => {
-            const response = await fetch(`${api_url}/api/activities/${id}`)
-            const data = await response.json()
-            setActivites(data)
-        }
+            try {
+                const response = await fetch(`${api_url}/api/activities/${id}`);
+                const json = await response.json();
+                setActivities(json);
+            } catch (error) {
+                console.error("Could not fetch activities:", error);
+            }
+        };
 
+        // 3. Fetch Linked Destinations (The Great Wall, etc.)
         const fetchDestinations = async () => {
-            const response = await fetch(`${api_url}/api/trips-destinations/destinations/${id}`)
-            const data = await response.json()
-            setDestinations(data)
-        }
+            try {
+                // Matches router.get('/destinations/:trip_id') in trips-destinations.js
+                const response = await fetch(`${api_url}/api/trips-destinations/destinations/${id}`);
+                const json = await response.json();
+                setDestinations(json);
+            } catch (error) {
+                console.error("Could not fetch destinations:", error);
+            }
+        };
 
-        const fetchTravelers= async () => {
-            const response = await fetch(`${api_url}/api/users-trips/users/${id}`)
-            const data = await response.json()
-            setTravelers(data)
-        }
-
-        fetchTravelers()
-        fetchActivities()
-        fetchDestinations()
-    }, [data, id])
+        fetchActivities();
+        fetchDestinations();
+    }, [data, id, api_url]);
 
     return (
-        <div className='out'>
-            <div className='flex-container'>
-
-                <div className='left-side'>
-                    <h3>{trip.title}</h3>
-                    <p>{'🗓️ Duration: ' + trip.num_days + ' days'}</p>
-                    <p>{'🛫 Depart: ' + trip.start_date}</p>
-                    <p>{'🛬 Return: ' + trip.end_date}</p>
-                    <p>{trip.description}</p>
+        <div className="TripDetails">
+            <main>
+                {/* Trip Banner Section */}
+                <div style={{ backgroundImage: `url(${trip.img_url})` }} className="trip-header">
+                    <div className="trip-header-content">
+                        <h1>{trip.title}</h1>
+                        <p>{trip.description}</p>
+                        
+                        {/* DESTINATION SECTION: Shows 'The Great Wall' */}
+                        <div className="destination-list">
+                            {destinations && destinations.length > 0 ? (
+                                destinations.map((dest, index) => (
+                                    <span key={index} className="destination-tag">
+                                        📍 {dest.destination} {/* Matches your JSON key 'destination' */}
+                                    </span>
+                                ))
+                            ) : (
+                                <span className="no-dest">No destinations linked yet</span>
+                            )}
+                        </div>
+                    </div>
                 </div>
 
-                <div className='right-side' style={{ backgroundImage:`url(${trip.img_url})`}}></div>
-            </div>
-
-            <div className='flex-container'>
-                <div className='travelers'>
-                    {
-                        travelers && travelers.length > 0 ?
-                        travelers.map((traveler, index) => 
-                            <p key={index} style={{ textAlign: 'center', lineHeight: 0, paddingTop: 20 }}>
-                                {traveler.username}
-                            </p>
-                        ) : ''
-                    }
-
-                    <br/>
-
-                    <Link to={'/users/add/'+ id }>
-                        <button className='addActivityBtn'>+ Add Traveler</button>
-                    </Link>
+                {/* Activities Section */}
+                <div className="activities-container">
+                    <h2>Planned Activities</h2>
+                    <div className="activities-grid">
+                        {activities && activities.length > 0 ? (
+                            activities.map((act) => (
+                                <ActivityBtn 
+                                    key={act.id} 
+                                    id={act.id} 
+                                    activity={act.activity} 
+                                    num_votes={act.num_votes}
+                                    api_url={api_url} 
+                                />
+                            ))
+                        ) : (
+                            <p>No activities yet! Use the button below to add some.</p>
+                        )}
+                    </div>
+                    
+                    <div className="details-controls">
+                        <a href={`/activity/create/${id}`}>
+                            <button className="addActivityBtn">+ Add Activity</button>
+                        </a>
+                        <a href={`/destination/new/${id}`}>
+                            <button className="addDestBtn">+ Add Destination</button>
+                        </a>
+                    </div>
                 </div>
-
-                <div className='activities'>
-                    {
-                        activities && activities.length > 0 ?
-                        activities.map((activity, index) => 
-                            <ActivityBtn
-                                key={activity.id}
-                                id={activity.id}
-                                activity={activity.activity}
-                                api_url={api_url}
-                            />
-                        ) : ''
-                    }
-
-                    <br/>
-
-                    <Link to={'../../activity/create/' + id }>
-                        <button className='addActivityBtn'>+ Add Activity</button>
-                    </Link>
-                </div>
-
-                <div className="destinations">
-                    {
-                        destinations && destinations.length > 0 ?
-                        destinations.map((destination, index) => 
-                            <DestinationBtn
-                                key={destination.id}
-                                id={destination.id}
-                                destination={destination.destination}
-                            />
-                        ) : ''
-                    }
-
-                    <br/>
-
-                    <Link to={'../../destination/new/' + id}>
-                        <button className="addDestinationBtn">+ Add Destination</button>
-                    </Link>
-                </div>
-            </div>
-            
+            </main>
         </div>
-    )
-}
+    );
+};
 
-export default TripDetails
+export default TripDetails;

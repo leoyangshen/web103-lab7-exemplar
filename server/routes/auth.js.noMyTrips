@@ -9,22 +9,27 @@ router.get('/login/success', (req, res) => {
             success: true,
             user: req.user
         })
-    } else {
-        // Crucial: Send a 401 if req.user is missing
-        res.status(401).json({ success: false, message: 'Not Logged In' })
     }
 })
 
 router.get('/login/failed', (req, res) => {
-    res.status(401).json({ success: false, message: 'failure' })
+    res.status(401).json({
+        success: false,
+        message: 'failure',
+    })
 })
 
 router.get('/logout', function(req, res, next) {
     req.logout((err) => {
         if (err) { return next(err) }
+
         req.session.destroy((err) => {
             res.clearCookie('connect.sid')
-            res.json({ status: 'logout', user: {} })
+
+            res.json({ 
+                status: 'logout',
+                user: {},
+            })
         })
     })
 })
@@ -32,7 +37,7 @@ router.get('/logout', function(req, res, next) {
 router.get('/github', passport.authenticate('github', { scope: [ 'read:user' ] }))
 
 router.get('/github/callback', passport.authenticate('github', {
-        successRedirect: 'http://localhost:5173', 
+        successRedirect: 'http://localhost:5173', // Redirects to Frontend
         failureRedirect: 'http://localhost:5173/destinations',
     })
 )

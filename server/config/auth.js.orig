@@ -12,12 +12,10 @@ const verify = async (accessToken, refreshToken, profile, callback)  => {
     const userData = { githubId: id, username: login, avatarUrl: avatar_url, accessToken }
 
     try {
-        console.log("Checking for user in database:", userData.username) // Verification Log
         const results = await pool.query('SELECT * FROM users WHERE username = $1', [userData.username])
         const user = results.rows[0]
 
         if (!user) {
-            console.log("No user found. Attempting to INSERT into PostgreSQL...") // Verification Log
             const results = await pool.query(
                 `INSERT INTO users (githubid, username, avatarurl, accesstoken)
                 VALUES($1, $2, $3, $4)
@@ -26,17 +24,14 @@ const verify = async (accessToken, refreshToken, profile, callback)  => {
             )
 
             const newUser = results.rows[0]
-            console.log("INSERT successful for user:", newUser.username) // Verification Log
             return callback(null, newUser)            
         }
 
-        console.log("User found! Returning existing user from DB.") // Verification Log
         return callback(null, user)
 
      }
 
     catch (error) {
-        console.error("!!! DATABASE ERROR DURING AUTH:", error) // This will catch the 'bigint' or column errors
         return callback(error)
     }
 }

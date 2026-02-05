@@ -50,11 +50,11 @@ app.get('/', (req, res) => {
 app.use('/auth', authRoutes)
 
 // routes
-app.use('/api/trips', tripRoutes)
-app.use('/api/activities', activityRoutes)
-app.use('/api/destinations', destinationRoutes)
-app.use('/api/trips-destinations', tripDestinationRoutes)
-app.use('/api/users-trips', userTripRoutes)
+app.use('/api/trips/', tripRoutes)
+app.use('/api/activities/', activityRoutes)
+app.use('/api/destinations/', destinationRoutes)
+app.use('/api/trips-destinations/', tripDestinationRoutes)
+app.use('/api/users-trips/', userTripRoutes)
 
 // connect server on port 3001
 const PORT = process.env.PORT || 3001
