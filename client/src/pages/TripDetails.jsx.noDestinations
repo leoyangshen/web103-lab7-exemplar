@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; 
+import { useParams, Link } from 'react-router-dom'; // Added Link import
 import ActivityBtn from '../components/ActivityBtn';
 import '../css/TripDetails.css';
 
@@ -8,19 +8,22 @@ const TripDetails = ({ data, api_url, user }) => {
     const [trip, setTrip] = useState({
         id: 0, title: '', description: '', img_url: '', 
         num_days: 0, start_date: '', end_date: '', total_cost: 0.00,
-        username: user ? user.username : ''
+	// username: props.user.username
+	username: user ? user.username : ''
     });
     
     const [activities, setActivities] = useState([]);
     const [destinations, setDestinations] = useState([]);
-    const [travelers, setTravelers] = useState([]); 
+    const [travelers, setTravelers] = useState([]); // STEP 10: New state variable
 
     useEffect(() => {
+        // 1. Find the specific trip from the trips state
         const result = data.find(item => item.id === parseInt(id));
         if (result) {
             setTrip(result);
         }
 
+        // 2. Fetch Activities
         const fetchActivities = async () => {
             try {
                 const response = await fetch(`${api_url}/api/activities/${id}`);
@@ -31,6 +34,7 @@ const TripDetails = ({ data, api_url, user }) => {
             }
         };
 
+        // 3. Fetch Linked Destinations
         const fetchDestinations = async () => {
             try {
                 const response = await fetch(`${api_url}/api/trips-destinations/destinations/${id}`);
@@ -41,6 +45,7 @@ const TripDetails = ({ data, api_url, user }) => {
             }
         };
 
+        // STEP 10: Fetch Travelers associated with this trip
         const fetchTravelers = async () => {
             try {
                 const response = await fetch(`${api_url}/api/users-trips/users/${id}`);
@@ -53,7 +58,7 @@ const TripDetails = ({ data, api_url, user }) => {
 
         fetchActivities();
         fetchDestinations();
-        fetchTravelers(); 
+        fetchTravelers(); // Call it here
     }, [data, id, api_url]);
 
     return (
@@ -67,30 +72,20 @@ const TripDetails = ({ data, api_url, user }) => {
                     </div>
                 </div>
 
-                {/* Combined Info Section for Travelers and Destinations */}
-                <div className="flex-container">
-                    <div className="travelers-container">
-                        <h2>Travelers</h2>
-                        <div className='travelers-list'>
-                            {travelers && travelers.length > 0 ?
-                                travelers.map((traveler, index) => 
-                                    <p key={index}>{traveler.username}</p>
-                                ) : <p>No travelers yet.</p>
-                            }
-                        </div>
+                <div className="travelers-section">
+                    <h2>Travelers</h2>
+                    <div className='travelers'>
+                        {
+                            travelers && travelers.length > 0 ?
+                            travelers.map((traveler, index) => 
+                                <p key={index} style={{ textAlign: 'center', lineHeight: 0, paddingTop: 20 }}>
+                                    {traveler.username}
+                                </p>
+                            ) : ''
+                        }
+                        <br/>
+                        {/* This Link allows navigation to the Add User page from the Trip Details tab */}
                         <Link to={'/users/add/' + id }><button className='addActivityBtn'>+ Add Traveler</button></Link>
-                    </div>
-
-                    <div className="destinations-container">
-                        <h2>Destinations</h2>
-                        <div className='destinations-list'>
-                            {destinations && destinations.length > 0 ?
-                                destinations.map((dest, index) => 
-                                    <p key={index}>📍 {dest.destination}</p>
-                                ) : <p>No destinations yet.</p>
-                            }
-                        </div>
-                        <Link to={'/destinations'}><button className='addActivityBtn'>+ Add Destination</button></Link>
                     </div>
                 </div>
 
@@ -115,6 +110,9 @@ const TripDetails = ({ data, api_url, user }) => {
                     <div className="details-controls">
                         <Link to={`/activity/create/${id}`}>
                             <button className="addActivityBtn">+ Add Activity</button>
+                        </Link>
+                        <Link to={`/destination/new/${id}`}>
+                            <button className="addDestBtn">+ Add Destination</button>
                         </Link>
                     </div>
                 </div>

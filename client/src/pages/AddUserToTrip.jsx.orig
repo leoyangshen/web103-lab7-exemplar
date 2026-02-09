@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
 import '../css/CreateActivity.css'
 
 const AddUserToTrip = ( { api_url } ) => {
-    const navigate = useNavigate();
+
     const [username, setUsername] = useState( { username: '' } )
     const { trip_id } = useParams()
 
@@ -32,8 +31,7 @@ const AddUserToTrip = ( { api_url } ) => {
         
         fetch(`${api_url}/api/users-trips/create/${trip_id}`, options)
 
-      //  window.location = '/'
-	navigate('/');
+        window.location = '/'
     }
 
     return (

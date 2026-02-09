@@ -37,7 +37,6 @@ const App = () => {
     }
 
     const fetchDestinations = async () => {
-      // Note: This may still 404 until you add the route in server.js
       const response = await fetch(`${API_URL}/api/destinations`)
       const data = await response.json()
       setDestinations(data)
@@ -52,6 +51,7 @@ const App = () => {
   useEffect(() => {
     const fetchMyTrips = async () => {
       if (user && user.username) {
+        // Fixed the syntax break in the variable name below
         const response = await fetch(`${API_URL}/api/users-trips/trips/${user.username}`, { credentials: 'include' })
         const data = await response.json()
         setMyTrips(data)
@@ -74,7 +74,7 @@ const App = () => {
         <ReadTrips user={user} data={trips} /> : <Login api_url={API_URL} />
     },
     {
-      path: '/my-trips', // New Route for My Trips
+      path: '/my-trips', 
       element: user && user.id ?
         <ReadTrips user={user} data={myTrips} /> : <Login api_url={API_URL} />
     },
@@ -116,7 +116,7 @@ const App = () => {
     {
       path: '/users/add/:trip_id',
       element: user && user.id ?
-        <AddUserToTrip user={user}/> : <Login api_url={API_URL} />
+        <AddUserToTrip user={user} api_url={API_URL} /> : <Login api_url={API_URL} />
     },
   ])
 

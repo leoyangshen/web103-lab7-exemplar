@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import '../css/CreateTrip.css'
 
 const CreateTrip = (props) => {
-    const navigate = useNavigate();
+
     const [trip, setTrip] = useState({
         id: 0,
         title: '',
@@ -39,8 +38,7 @@ const CreateTrip = (props) => {
         }
 
         fetch(`${props.api_url}/api/trips`, options)
-       // window.location.href = '/'
-	navigate('/');
+        window.location.href = '/'
     }
 
     return (

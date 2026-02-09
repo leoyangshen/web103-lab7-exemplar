@@ -46,7 +46,7 @@ const getAllDestinations  = async (request, response) => {
         const trip_id = parseInt(request.params.trip_id)
         const results = await pool.query("SELECT d.* FROM trips_destinations td, destinations d WHERE td.destination_id = d.id AND td.trip_id = $1", [trip_id]);
         response.status(200).json(results.rows)
-       // console.log(results.rows)
+        console.log(results.rows)
     } catch (error) {
         response.status(409).json({error: error.message})
         console.log("Unable to get destinations for given trip")
