@@ -19,7 +19,9 @@ const App = () => {
   const [myTrips, setMyTrips] = useState([]) // New state for user-specific trips
   const [destinations, setDestinations] = useState([])
   const [user, setUser] = useState(null)
-  const API_URL = 'http://localhost:3001'
+  // const API_URL = 'http://localhost:3001'
+  // use proxy file vite.config.js for testing purpose. Watch messages in websocket.
+  const API_URL = ''
 
   useEffect(() => {
     const getUser = async () => {
