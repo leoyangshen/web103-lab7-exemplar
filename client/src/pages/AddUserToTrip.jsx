@@ -5,7 +5,7 @@ import '../css/CreateActivity.css'
 
 const AddUserToTrip = ( { api_url } ) => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState( { username: '' } )
+    const [username, setUsername] = useState( { username: 'JohnDoe' } )
     const { trip_id } = useParams()
 
     const handleChange = (event) => {
@@ -30,7 +30,7 @@ const AddUserToTrip = ( { api_url } ) => {
             body: JSON.stringify(username),
         }
         
-        fetch(`${api_url}/api/users-trips/create/${trip_id}`, options)
+        await fetch(`${api_url}/api/users-trips/create/${trip_id}`, options)
 
       //  window.location = '/'
 	navigate('/');

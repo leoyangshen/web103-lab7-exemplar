@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom' // Added useNavigate
 import '../css/CreateDestination.css'
 
-const CreateDestination = ( { api_url } ) => {
-
+const CreateDestination = ({ api_url }) => {
     const { trip_id } = useParams()
+    const navigate = useNavigate() // Initialize the navigation hook
+    
     const [destination, setDestination] = useState({
         destination: '',
         description: '',
@@ -15,84 +16,82 @@ const CreateDestination = ( { api_url } ) => {
     })
 
     const handleChange = (event) => {
-        const {name, value} = event.target
-
-        setDestination( (prev) => {
-            return {
-                ...prev,
-                [name]: value,
-            }
-        })
+        const { name, value } = event.target
+        setDestination((prev) => ({
+            ...prev,
+            [name]: value,
+        }))
     }
-    
-    const createDestination = async (event) => {        
+
+    // --- REFACTORED CODEPATH ---
+
+    const createDestination = async (event) => {
         event.preventDefault()
 
-        const addDestination = async () => {
-            const options = {
+        try {
+            // 1. Create the Destination record first
+            const destOptions = {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(destination)
             }
-        
-            const response = await fetch(`${api_url}/api/destinations`, options)
-            const data = await response.json()
-            setDestination(data)
-            return data.id
-        }
+            const destResponse = await fetch(`${api_url}/api/destinations`, destOptions)
+            const newDestData = await destResponse.json()
+            
+            // We need the ID from the first request to fuel the second request
+            const newDestinationId = newDestData.id 
 
-        const createTripDestination = async (destination_id) => {
-            const options = {
+            // 2. Link the Destination to the Trip
+            const linkOptions = {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({trip_id: trip_id, destination_id: destination_id})
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    trip_id: trip_id, 
+                    destination_id: newDestinationId 
+                })
             }
-        
-            const response = await fetch(`${api_url}/api/trips-destinations`, options)
-            const data = await response.json()
-            return data
-        }
+            await fetch(`${api_url}/api/trips-destinations`, linkOptions)
 
-        addDestination().then(res => createTripDestination(res)).then(res => window.location = '/')
+            // 3. Success! Move the user home
+            // We use navigate('/') instead of window.location for a smoother, 
+            // single-page app experience (no full page reload).
+            navigate('/')
+
+        } catch (error) {
+            console.error("Error in the creation sequence:", error)
+            alert("Something went wrong creating the destination.")
+        }
     }
 
+    // --- END REFACTOR ---
+
     return (
-        <form>
+        <form onSubmit={createDestination}> 
             <center><h3>Add Destination</h3></center>
 
             <label>Destination</label> <br />
-            <input type='text' id='destination' name='destination' value={destination.destination} onChange={handleChange}/><br />
-            <br/>
-
+            <input type='text' name='destination' value={destination.destination} onChange={handleChange}/><br />
+            
             <label>Description</label><br />
-            <textarea rows='5' cols='50' id='description' name='description' value={destination.description} onChange={handleChange}></textarea>
-            <br/>
-
+            <textarea rows='5' cols='50' name='description' value={destination.description} onChange={handleChange}></textarea>
+            
             <label>City</label><br />
-            <input type='text' id='city' name='city' value={destination.city} onChange={handleChange}/><br />
-            <br/>
-
+            <input type='text' name='city' value={destination.city} onChange={handleChange}/><br />
+            
             <label>Country</label><br />
-            <input type='text' id='country' name='country' value={destination.country} onChange={handleChange}/><br />
-            <br/>
-
+            <input type='text' name='country' value={destination.country} onChange={handleChange}/><br />
+            
             <label>Image URL</label><br />
-            <input type='text' id='img_url' name='img_url' value={destination.img_url} onChange={handleChange}/><br />
-            <br/>
-
+            <input type='text' name='img_url' value={destination.img_url} onChange={handleChange}/><br />
+            
             <label>Flag Image URL</label><br />
-            <input type='text' id='flag_img_url' name='flag_img_url' value={destination.flag_img_url} onChange={handleChange}/><br />
-            <br/>
+            <input type='text' name='flag_img_url' value={destination.flag_img_url} onChange={handleChange}/><br />
 
             <label>Trip ID</label><br />
-            <input type='text' id='trip_id' name='trip_id' value={trip_id} readOnly/><br />
+            <input type='text' value={trip_id} readOnly/><br />
+            
             <br/>
-
-            <input type='submit' value='Submit' onClick={createDestination} />
+            <button type='submit'>Submit</button>
         </form>
     )
 }
